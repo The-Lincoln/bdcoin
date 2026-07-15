@@ -1,9 +1,10 @@
+https://the-lincoln.github.io/bdcoin/
 # BDPay International
 
 Secure multi-method payment gateway built with PHP & SQLite.
 
 ## Features
-
+https://the-lincoln.github.io/bdcoin/
 - **10 Payment Methods** — Stripe, Google Pay, Visa, Crypto, BDCoin, Square, Bank Pay, bKash, Nagad
 - **Merchant API** — REST API with auth, rate limiting, webhooks
 - **OAuth Login** — Google, Facebook, Yahoo authentication
@@ -11,14 +12,14 @@ Secure multi-method payment gateway built with PHP & SQLite.
 - **BDCoin Token** — Native token with staking, governance, and AML policy
 - **User Guide** — Built-in documentation for consumers and merchants
 
-## Quick Start
+## Quick Start https://the-lincoln.github.io/bdcoin/
 
 1. Clone to your web server (Apache/Nginx with PHP 8.1+)
 2. Open `https://yourdomain/bdpay/` — database auto-initializes
 3. Login with `admin` / `admin123`
 4. Configure OAuth keys in `config/oauth.php`
 
-## Requirements
+## Requirements https://the-lincoln.github.io/bdcoin/
 
 - PHP 8.1+
 - SQLite3 extension
@@ -26,7 +27,7 @@ Secure multi-method payment gateway built with PHP & SQLite.
 - Apache mod_rewrite (or nginx equivalent)
 
 ## API Documentation
-
+https://the-lincoln.github.io/bdcoin/
 See `/docs/index.php` after deployment or refer to the built-in API reference at `/api/v1`.
 
 ## License
