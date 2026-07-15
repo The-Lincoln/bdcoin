@@ -1,0 +1,168 @@
+# BDPay International
+
+Secure multi-method payment gateway built with PHP & SQLite.
+
+## Features
+
+- **10 Payment Methods** — Stripe, Google Pay, Visa, Crypto, BDCoin, Square, Bank Pay, bKash, Nagad
+- **Merchant API** — REST API with auth, rate limiting, webhooks
+- **OAuth Login** — Google, Facebook, Yahoo authentication
+- **Superadmin Panel** — Admin dashboard with transaction management
+- **BDCoin Token** — Native token with staking, governance, and AML policy
+- **User Guide** — Built-in documentation for consumers and merchants
+
+## Quick Start
+
+1. Clone to your web server (Apache/Nginx with PHP 8.1+)
+2. Open `https://yourdomain/bdpay/` — database auto-initializes
+3. Login with `admin` / `admin123`
+4. Configure OAuth keys in `config/oauth.php`
+
+## Requirements
+
+- PHP 8.1+
+- SQLite3 extension
+- cURL extension
+- Apache mod_rewrite (or nginx equivalent)
+
+## API Documentation
+
+See `/docs/index.php` after deployment or refer to the built-in API reference at `/api/v1`.
+
+## License
+
+Proprietary — All rights reserved.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDCoin — BDPay International Payment Gateway</title>
+    <meta name="description" content="BDPay International — multi-method payment gateway supporting Stripe, Google Pay, Visa, Crypto, BDCoin, Square, Bank Pay, bKash & Nagad.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .hero { text-align: center; padding: 40px 0 30px; }
+        .hero .logo {
+            font-size: 64px; margin-bottom: 16px;
+            background: rgba(255,255,255,0.15);
+            width: 100px; height: 100px; line-height: 100px;
+            border-radius: 24px; display: inline-block;
+            backdrop-filter: blur(4px);
+        }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.5px; }
+        .hero p { font-size: 1.15rem; opacity: .9; max-width: 600px; margin: 12px auto 0; }
+        .card {
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+            border-radius: 20px; padding: 32px; margin: 24px 0;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .card h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; }
+        .card h2 i { margin-right: 8px; }
+        .methods {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(130px,1fr));
+            gap: 12px; list-style: none;
+        }
+        .methods li {
+            background: rgba(255,255,255,0.1); border-radius: 12px;
+            padding: 14px 10px; text-align: center; font-size: .9rem; font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .methods li .icon { font-size: 1.6rem; display: block; margin-bottom: 4px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-2 .card { margin: 0; }
+        .btn {
+            display: inline-block; background: #fff; color: #667eea;
+            padding: 14px 36px; border-radius: 50px; font-weight: 700;
+            text-decoration: none; font-size: 1rem; transition: .2s;
+            border: none; cursor: pointer;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,.2); }
+        .btn-outline {
+            background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5);
+            margin-left: 12px;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+        .cta { text-align: center; padding: 20px 0; }
+        .footer { text-align: center; font-size: .85rem; opacity: .7; padding: 20px 0 40px; }
+        .features { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 12px; }
+        .features .item { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 18px; text-align: center; }
+        .features .item .icon { font-size: 2rem; display: block; margin-bottom: 6px; }
+        .features .item .label { font-weight: 600; font-size: .9rem; }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .methods { grid-template-columns: repeat(2,1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="logo">💎</div>
+            <h1>BDCoin</h1>
+            <p>BDPay International — open-source multi-method payment gateway.<br>10 payment methods, merchant API, OAuth, and native BDCoin token.</p>
+        </div>
+
+        <div class="card">
+            <h2><i>💳</i> Payment Methods</h2>
+            <ul class="methods">
+                <li><span class="icon">⚡</span>Stripe</li>
+                <li><span class="icon">▶️</span>Google Pay</li>
+                <li><span class="icon">💳</span>Visa</li>
+                <li><span class="icon">₿</span>Crypto</li>
+                <li><span class="icon">💎</span>BDCoin</li>
+                <li><span class="icon">🔲</span>Square</li>
+                <li><span class="icon">🏦</span>Bank Pay</li>
+                <li><span class="icon">📱</span>bKash</li>
+                <li><span class="icon">📱</span>Nagad</li>
+                <li><span class="icon">🔗</span>SWPE Token</li>
+            </ul>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h2><i>🔑</i> Features</h2>
+                <div class="features">
+                    <div class="item"><span class="icon">🔐</span><span class="label">OAuth Auth</span></div>
+                    <div class="item"><span class="icon">📡</span><span class="label">REST API</span></div>
+                    <div class="item"><span class="icon">📄</span><span class="label">API Docs</span></div>
+                    <div class="item"><span class="icon">🔔</span><span class="label">Webhooks</span></div>
+                    <div class="item"><span class="icon">⚖️</span><span class="label">Governance</span></div>
+                    <div class="item"><span class="icon">🛡️</span><span class="label">AML Policy</span></div>
+                    <div class="item"><span class="icon">📊</span><span class="label">Admin Panel</span></div>
+                    <div class="item"><span class="icon">🎯</span><span class="label">Staking</span></div>
+                </div>
+            </div>
+            <div class="card">
+                <h2><i>📖</i> Quick Links</h2>
+                <ul style="list-style:none;font-size:.95rem;">
+                    <li style="margin-bottom:10px;">📘 <a href="user-guide.php" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">User Guide</a></li>
+                    <li style="margin-bottom:10px;">📗 <a href="docs/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">API Documentation</a></li>
+                    <li style="margin-bottom:10px;">📙 <a href="policies/payment_guide.php" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">Payment Guide</a></li>
+                    <li style="margin-bottom:10px;">📕 <a href="policies/bdcoin_policy.php" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">BDCoin Policy</a></li>
+                    <li style="margin-bottom:10px;">⚙️ <a href="admin/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">Admin Dashboard</a></li>
+                    <li>📄 <a href="https://github.com/the-lincoln/bdcoin" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta">
+            <a href="https://github.com/the-lincoln/bdcoin" class="btn">View on GitHub</a>
+            <a href="docs/" class="btn btn-outline">API Docs</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 BDPay International. Open-source under the MIT License.
+        </div>
+    </div>
+</body>
+</html>
