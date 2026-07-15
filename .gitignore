@@ -1,0 +1,3 @@
+bdpay.db
+*.log
+.env
